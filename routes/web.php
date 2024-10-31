@@ -16,6 +16,12 @@ Route::get('/tools', function () {
     return view('tools.index', ["greeting" => "Hello", "ninjas" => $ninjas]);
 });
 
+Route::get('/tools/create', function () {
+    return view('tools.create');
+});
+
+
+
 Route::get('/tools/{id}', function ($id) {
 
     return view('tools.show', ["id" => $id]);
