@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NinjaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -7,22 +8,8 @@ Route::get('/', function () {
 });
 
 
-Route::get('/tools', function () {
+Route::get('/ninjas', [NinjaController::class, 'index'])->name('ninjas.index');
 
-    $ninjas = [
-        ['name' => "mario", "skill" => 75, "id" => "1"],
-        ['name' => "bambo", "skill" => 45, "id" => "2"],
-    ];
-    return view('tools.index', ["greeting" => "Hello", "ninjas" => $ninjas]);
-});
+Route::get('/ninjas/create', [NinjaController::class, 'create'])->name('ninjas.create');
 
-Route::get('/tools/create', function () {
-    return view('tools.create');
-});
-
-
-
-Route::get('/tools/{id}', function ($id) {
-
-    return view('tools.show', ["id" => $id]);
-});
+Route::get('/ninjas/{id}', [NinjaController::class, 'show'])->name('ninjas.show');

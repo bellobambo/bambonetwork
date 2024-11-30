@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tools Network</title>
+    <title>ninjas Network</title>
 
     @vite('resources/css/app.css')
 </head>
@@ -12,13 +12,13 @@
     <header>
         <nav>
             <h1>
-                Tools Network
+                ninjas Network
             </h1>
-            <a href="/tools">
-                All Tools
+            <a href="{{ route('ninjas.index') }}">
+                All ninjas
             </a>
-            <a href="/tools/create">
-                Create New Tools
+            <a href="{{ route('ninjas.create') }}">
+                Create New ninjas
             </a>
         </nav>
     </header>
